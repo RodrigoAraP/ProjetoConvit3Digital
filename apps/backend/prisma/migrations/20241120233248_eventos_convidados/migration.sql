@@ -19,7 +19,10 @@ CREATE TABLE "convidados" (
     "email" TEXT NOT NULL,
     "confirmado" BOOLEAN NOT NULL,
     "possuiAcompanhantes" BOOLEAN NOT NULL,
-    "qntdeAcompanhantes" INTEGER NOT NULL,
+    "qtdeAcompanhantes" INTEGER NOT NULL,
     "eventoId" TEXT,
     CONSTRAINT "convidados_eventoId_fkey" FOREIGN KEY ("eventoId") REFERENCES "eventos" ("id") ON DELETE SET NULL ON UPDATE CASCADE
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "eventos_alias_key" ON "eventos"("alias");
